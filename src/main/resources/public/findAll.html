@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>findAll</title>
+    <script type="text/javascript">
+        var xmlHttp = null;
+
+        function findAll() {
+            var url = "/kotlin/girls";
+            if (window.XMLHttpRequest) {
+                xmlHttp = new XMLHttpRequest();
+            } else if (window.ActiveXObject) {
+                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP")
+            }
+
+            if (xmlHttp != null) {
+                xmlHttp.onreadystatechange = state_Change;
+                xmlHttp.open("GET", url, true);
+                xmlHttp.send(null);
+            } else {
+                alert("Your browser does not support XMLHTTP.");
+            }
+        }
+
+        function state_Change() {
+            if (xmlHttp.readyState == 4) {
+                if (xmlHttp.status == 200) {
+                    document.getElementById('resultData').innerHTML = xmlHttp.responseText;
+                } else {
+                    alert("Problem retrieving data:" + xmlHttp.statusText)
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+Ajax方式：<br/>
+<button onclick="findAll()">findAll</button>
+<textarea id="resultData" rows="15" cols="50">接口的显示数据会显示在这里</textarea>
+</body>
+</html>

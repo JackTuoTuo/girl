@@ -13,3 +13,10 @@ spring:
       ddl-auto: update
     show-sql: true
 
+  thymeleaf:
+    cache: false
+    suffix: .html
+    prefix: classpath:/templates/
+    mode: HTML5
+
+

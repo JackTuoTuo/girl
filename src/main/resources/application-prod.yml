@@ -1,7 +1,5 @@
 server:
   port: 8012
-  context-path: /girl
-
 girl:
  cupSize: A
  age: 18
