@@ -1,9 +1,9 @@
 spring:
   profiles:
-    active: prod
+    active: dev
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://117.48.205.104:3306/dbgirl?useSSL=false
+    url: jdbc:mysql://localhost:3306/dbgirl?useSSL=false
     username: root
     password: root
 
